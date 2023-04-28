@@ -274,10 +274,132 @@ _____
 
 Task : Read Encryption documentation. 
 
-Encrypt s3 bucket using SSE-KMS (DMK).. and try to make an object public. output.??
+Encrypt s3 bucket using SSE-KMS (DMK).. and try to make an object public... output.??
+
+
+===============================================================================================
+
+D: 28/04/2023
+
+Deny upload object operation on a particular bucket. : Bucket policy
+
+Bucket ARN : arn:aws:s3:::avinash.bucket
+IAM User ARN / Principal : arn:aws:iam::501170964283:user/s3user
+Effect : Allow / Deny : Deny
+Action / Operation : PutObject, DeleteBucket
+
+
+Object level / Inside bucket possible operation : arn:aws:s3:::avinash.bucket/*
+Bucket level : arn:aws:s3:::avinash.bucket
+if you dont know bucket level/object level ; give both
+(arn:aws:s3:::BUCKETNAME,arn:aws:s3:::BUCKETNAME/*)
+
+arn:aws:s3:::2804-policytest-bucket,
+arn:aws:s3:::2804-policytest-bucket/*
+
+________________________
+
+Transfer acceleration : Uses Edge locations for data transfer. (COST US)
+S3 Transfer Acceleration is not supported for buckets with periods (.) in their names
+
+https://s3-accelerate-speedtest.s3-accelerate.amazonaws.com/en/accelerate-speed-comparsion.html?region=us-east-1&origBucketName=avinash
+
+
+________________________________________________________________________________
+
+FOr Put of new object, "read after write consistency". (If upload success, we can start accessing the data without any delay)
+Eventual consistenacy For overwrite an object / delete an object. (AFter delete shown as success, we may get response for the request for some milli seconds) (You have uploaded object with latest data and trying to access, you have chances to get previous data object) 
+
+__________________
+
+
+Performance : 
+3500 PUT Object per second per prefix
+5500 GET Object per second per prefix
+
+--> Increase the uniqueness for the object names.
+--> Use more prefixes (Folder)
+
+
+_______________________________________________________________________________
+
+
+Task 1 : limit an IAM user to work only on his specific bucket.
+
++++++++++++
+Requirement : IAM user has its s3 bucket, he need to get access on his own bucket. : IAM Policy
+https://s3.console.aws.amazon.com/s3/buckets/bucketname
+
+help : https://repost.aws/knowledge-center/s3-console-access-certain-bucket
+
+Requirement : Create an IAM user, Create a bucket for this user... Now, This user should get access only on his specific bucket..
+He should not able to view all the s3 buckets.
++++++++++
+
+Task 2 : Create an IAM user.. Provide him S3FullAccess.. But on a specific bucket "Deny" him to perform "DeleteObject, DeleteBucket, PutObject, getbucketpolicy"
 
 
 
+
+
+
+
+
+_____________________
+
+
+
+Server access logging : enable logging on bucket.
+
+https://docs.aws.amazon.com/AmazonS3/latest/userguide/LogFormat.html
+
+Cloudtrail : Data events : It allow us to log all s3 activities (Current buckets and future buckets).
+____________
+
+Requester pays : the requester pays for requests and data transfer costs, and anonymous access to this bucket is disabled. Instead of bucket owner data requester need to pay for the data transfer & request.
+--> Anonomus access disables once we enable this feature.
+
+
+________________________________________________________________________________________
+
+
+Pricing : https://calculator.aws/
+Free Tier : https://aws.amazon.com/free
+
+
+Storage Class Analysis : Analyze storage access patterns to help you decide when to transition objects to the appropriate storage class. 
+
+Cross-origin resource sharing (CORS)
+The CORS configuration, written in JSON, defines a way for client web applications that are loaded in one domain to interact with resources in a different domain.
+
+
+
+How to access s3 using 3rd party applications.!!
+Ans : S3 Browser, CyberDuck, WinSCP, CLoudberry explorer
+
+https://www.msp360.com/explorer/windows/amazon-s3.aspx
+
+
+Task : Try any of the s3 supported 3rd party application. 
+
+________________
+
+If we have larger file to uploade to s3 paltform, We can initiate the "Multi Part Upload". 
+
+_________________
+
+AWS Snow Family : 
+--> AWS snowcone : 8 TB
+--> AWS Snowball : 100 TB
+--> AWS Snowball edge : 40 - 100 TB
+--> AWS Snow mobile : PB scale container
+
+1 pb data, 1 gbps internet line with 80%.. 20-25 yrs
+
+___
+
+AWS Direct Connect : Dedicated connection between on-premise/local environment to AWS environment. 3-4 weeks time required. We need to choose the required bandwidth. 
+--> Airtel, jio, sify
 
 
 

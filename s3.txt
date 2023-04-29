@@ -339,15 +339,9 @@ He should not able to view all the s3 buckets.
 Task 2 : Create an IAM user.. Provide him S3FullAccess.. But on a specific bucket "Deny" him to perform "DeleteObject, DeleteBucket, PutObject, getbucketpolicy"
 
 
+===============================================================================================
 
-
-
-
-
-
-_____________________
-
-
+D: 29/04/2023
 
 Server access logging : enable logging on bucket.
 
@@ -372,7 +366,13 @@ Storage Class Analysis : Analyze storage access patterns to help you decide when
 Cross-origin resource sharing (CORS)
 The CORS configuration, written in JSON, defines a way for client web applications that are loaded in one domain to interact with resources in a different domain.
 
+Monitoring : 
+--> Cloudwatch is a servie to monitor our aws resources.
+--> Free metrics and Paid metris. 
+--> Free metrics : Bucket Size and No of objects.
+--> Paid metrics : GET, Put, Delete, Latecy, 4xx, 2xx, 3xx, 5xx, data transfered.
 
+--
 
 How to access s3 using 3rd party applications.!!
 Ans : S3 Browser, CyberDuck, WinSCP, CLoudberry explorer
@@ -385,6 +385,8 @@ Task : Try any of the s3 supported 3rd party application.
 ________________
 
 If we have larger file to uploade to s3 paltform, We can initiate the "Multi Part Upload". 
+
+Help Video : https://www.youtube.com/watch?v=ZJaNTLKz334
 
 _________________
 
@@ -400,6 +402,15 @@ ___
 
 AWS Direct Connect : Dedicated connection between on-premise/local environment to AWS environment. 3-4 weeks time required. We need to choose the required bandwidth. 
 --> Airtel, jio, sify
+
+____
+
+AWS Storage gateway : 
+Amazon S3 File Gateway : Hybrid solution. We can access data storing in S3 from our On-prem location with the help of NFS/SMB protocols.
+--> Need to deploy Image in Local env.
+--> need to activate it.
+--> Then it help us to cache the data.
+
 
 
 

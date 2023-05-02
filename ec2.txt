@@ -40,9 +40,6 @@ Spot instances : When we have flexible start/stop durations.. No Criticaldata/ a
 
 _______________
 
-Task : create a policy to Allow an IAM user to work only on specific region (ap-south-1).
-_______________
-
 
 Only On-Demand ec2 instances comes under free tier eligibility.
 ** Fix to one region. ap-south-1
@@ -167,6 +164,19 @@ FREE TIER : 750 Hrs/Month t2.micro windows instance (ondemand)
 
 1 instance x 24 hrs x 31 days = 744 Hrs 	--> 750 Hrs Free tier
 2 instance x 24 hrs x 16 days = 768 Hrs	
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 _________________________________________________________________________________________
 

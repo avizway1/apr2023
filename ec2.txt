@@ -165,21 +165,9 @@ FREE TIER : 750 Hrs/Month t2.micro windows instance (ondemand)
 1 instance x 24 hrs x 31 days = 744 Hrs 	--> 750 Hrs Free tier
 2 instance x 24 hrs x 16 days = 768 Hrs	
 
+========================================================================================================
 
-
-
-
-
-
-
-
-
-
-
-
-
-_________________________________________________________________________________________
-
+D: 03/05/2023
 
 Linux OS : Amazon Linux 2 OS.. RHEL, Ubuntu, Suse, Kali
 
@@ -258,11 +246,6 @@ Task : Launch Linux ec2 instance and get connect to it.
 ________________________________________________________________________________________
 
 
-https://www.udemy.com/course/jenkinswithavinash/?couponCode=FEB2023
-
-https://www.udemy.com/course/linuxwithavinash/?couponCode=FEB2023
-
-
 whoami		--> tells us as what user we are working.
 sudo		--> allow user to execute the command with root level permissions
 sudo su		--> Switch to root user
@@ -282,6 +265,24 @@ cut and paste  :  mv
 
 to rename a file we use "mv" command :  mv oldfilename newfilename
 
+
+
+
+
+_____________________________________________________________________________________
+
+https://www.udemy.com/course/linuxwithavinash/?couponCode=APR2023
+
+https://www.udemy.com/course/jenkinswithavinash/?couponCode=APR2023
+
+____________________________________________________________________________________
+
+
+
+
+
+
+
 _________________________
 
 vim / vi / nano
@@ -294,9 +295,7 @@ Press I		--> INSERT Mode
 Press ESC		--> ReadOnly Mode
 :wq				--> Write and Quit (Write changes to file and quit the editor)
 :q!				--> Quit the Editor without writing the changes
-_____________________________________________________________________________________
 
-____________________________________________________________________________________
 
 Req: Make this linux Instance as Web Server (Apache).
 

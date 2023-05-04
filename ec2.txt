@@ -266,9 +266,6 @@ cut and paste  :  mv
 to rename a file we use "mv" command :  mv oldfilename newfilename
 
 
-
-
-
 _____________________________________________________________________________________
 
 https://www.udemy.com/course/linuxwithavinash/?couponCode=APR2023
@@ -277,13 +274,7 @@ https://www.udemy.com/course/jenkinswithavinash/?couponCode=APR2023
 
 ____________________________________________________________________________________
 
-
-
-
-
-
-
-_________________________
+D: 04/05/2023
 
 vim / vi / nano
 
@@ -402,15 +393,22 @@ mkfs -t xfs /dev/xvdf		--> Make file system and write it to Additonal volume
 
 mount /dev/xvdf newvolume/	--> mount addl volume to directory
 
-
+=====================================================================================
 
 Task 1 : Launch an amazon linux, make it as webserver and deliver custom webcontent.
 
-Task 2 : Create a 2gb volume, attach it to ec2 instance and make it available. 
+Task 2 : Create a 1gb volume, attach it to ec2 instance and make it available. 
 
-df -Th ==> should show your 2 gb volume.
+df -Th ==> should show your 1 gb volume.
 
-=================
+Task 3 : Increase the 1gb volume size to 2 gb.
+
+df -Th ==> This should show 2gb as volume size.
+
+=====================================================================================
+
+
+
 
 
 

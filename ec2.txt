@@ -407,11 +407,7 @@ df -Th ==> This should show 2gb as volume size.
 
 =====================================================================================
 
-
-
-
-
-
+D: 05/05/2023
 
 --> Above mount is temp mount only.. it won't available after the instance reboot.
 --> To make this volume perm mount to the directory, Add entry in "/etc/fstab" file.
@@ -474,16 +470,28 @@ Step 5 : Edit the "/etc/fstab" file and write the information grabbed from "/etc
 ===================================================================================================================
 
 
-Task : Launch a Linux instance with 8 gb root volume.. Add 2gb volume and make it available and write some data into it. (Perm mount).. 
+Task : Launch a Linux instance with 8 gb root volume.. 
+Add 2gb additional volume and make it available and write some data into it. (Perm mount).. 
 
 launch another ec2 instance in same AZ as existing instance.. Detach that 2 gb volume from existing instance and atach it to new instance.. and verify the data.. 
 
-Increase this volume size to 3 gb and make it avaiulabvle at OS level . df -Th ==> should show 3 gb.
+Increase this volume size to 3 gb and make it avaiulabvle at OS level . 
+df -Th ==> should show 3 gb.
 
 
 Task 2 : Do same task on windows.
 
 =====================================================================================================
+
+
+
+
+
+
+
+
+
+
 
 
 Instance 1 in ap-south-1a ---> Instance 2 in ap-south-1a ==> Detach from instance 1 and attach to instance 2.. 
@@ -536,4 +544,38 @@ Task 1 : Launch an ec2 instance in ap-south-1a.. Create a "New volume with 1 gb 
 
 Task 2 : Launch Another ec2 instance in ap-south-1b..
 Get the 2gb volume data from instance 1a to newly launch 1b ec2 instance.. Make Same volume available to "1b instance"..!!
+
+
+
+
+volume name : xvdb
+
+1 gb volume ==> /dev/xvdb
+
+
+file -s /dev/xvdb
+
+mkfs -t xfs /dev/xvdb
+
+Copy entry from /etc/mtab file
+
+cat /etc/mtab
+
+/dev/xvdb /home/ec2-user/1gbvolume xfs rw,relatime,attr2,inode64,logbufs=8,logbsize=32k,noquota 0 0
+
+Now, you need to write this lines to /etc/fstab file
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -530,6 +530,23 @@ https://aws.amazon.com/blogs/storage/automating-amazon-ebs-snapshot-and-ami-mana
 
 ______________________ 
 
+Task 1 : Launch an ec2 instance in ap-south-1a.. Create a "New volume with 1 gb size" in ap-south-1a and attach this volume to ec2 instance and make it available and write some data. Goto AWS console "Increase the volume size to 2 GB", make this 2gb volume available at OS level. Write some data.
+
+Task 2 : Launch Another ec2 instance in ap-south-1b..
+Get the 2gb volume data from instance 1a to newly launch 1b ec2 instance.. Make Same volume available to "1b instance"..!!
+
+
+
+
+Task 3 : https://aws.amazon.com/blogs/storage/automating-amazon-ebs-snapshot-and-ami-management-using-amazon-dlm/
+
+
+
+=====================================================================================================
+
+
+
+
 SOP : Standard Operational Procedure : 
 
 DLM : Data Lifecycle manager : Automate the snapshot creation process. 
@@ -543,22 +560,6 @@ Fast snapshot restore : Enable fast snapshot restore to ensure that volumes crea
 
 
 __________
-
-
-Task 1 : Launch an ec2 instance in ap-south-1a.. Create a "New volume with 1 gb size" in ap-south-1a and attach this volume to ec2 instance and make it available and write some data. Goto AWS console "Increase the volume size to 2 GB", make this 2gb volume available at OS level. Write some data.
-
-Task 2 : Launch Another ec2 instance in ap-south-1b..
-Get the 2gb volume data from instance 1a to newly launch 1b ec2 instance.. Make Same volume available to "1b instance"..!!
-
-Task 3 : https://aws.amazon.com/blogs/storage/automating-amazon-ebs-snapshot-and-ami-management-using-amazon-dlm/
-
-
-
-=====================================================================================================
-
-
-
-
 
 
 

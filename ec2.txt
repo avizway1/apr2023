@@ -483,16 +483,7 @@ Task 2 : Do same task on windows.
 
 =====================================================================================================
 
-
-
-
-
-
-
-
-
-
-
+D: 06/05/2023
 
 Instance 1 in ap-south-1a ---> Instance 2 in ap-south-1a ==> Detach from instance 1 and attach to instance 2.. 
 
@@ -537,6 +528,20 @@ https://aws.amazon.com/blogs/storage/automating-amazon-ebs-snapshot-and-ami-mana
 --> We cannot share an Default Master key Encrypted snapshot.
 --> If we are using Custom encryption key, we can share snapshot with another aws account, but we need to provide permissions on encryption key also to another aws account.
 
+______________________ 
+
+SOP : Standard Operational Procedure : 
+
+DLM : Data Lifecycle manager : Automate the snapshot creation process. 
+--> We use "tags" to filter the resources. 
+
+Default Retention Values: 
+Prod : 7 Days
+Non Prod : 3 Days 
+
+Fast snapshot restore : Enable fast snapshot restore to ensure that volumes created from snapshots created by this policy instantly deliver all of their provisioned performance.
+
+
 __________
 
 
@@ -545,25 +550,11 @@ Task 1 : Launch an ec2 instance in ap-south-1a.. Create a "New volume with 1 gb 
 Task 2 : Launch Another ec2 instance in ap-south-1b..
 Get the 2gb volume data from instance 1a to newly launch 1b ec2 instance.. Make Same volume available to "1b instance"..!!
 
+Task 3 : https://aws.amazon.com/blogs/storage/automating-amazon-ebs-snapshot-and-ami-management-using-amazon-dlm/
 
 
 
-volume name : xvdb
-
-1 gb volume ==> /dev/xvdb
-
-
-file -s /dev/xvdb
-
-mkfs -t xfs /dev/xvdb
-
-Copy entry from /etc/mtab file
-
-cat /etc/mtab
-
-/dev/xvdb /home/ec2-user/1gbvolume xfs rw,relatime,attr2,inode64,logbufs=8,logbsize=32k,noquota 0 0
-
-Now, you need to write this lines to /etc/fstab file
+=====================================================================================================
 
 
 

@@ -537,15 +537,9 @@ Get the 2gb volume data from instance 1a to newly launch 1b ec2 instance.. Make 
 
 
 
-
-Task 3 : https://aws.amazon.com/blogs/storage/automating-amazon-ebs-snapshot-and-ami-management-using-amazon-dlm/
-
-
-
 =====================================================================================================
 
-
-
+D: 08/05/2023
 
 SOP : Standard Operational Procedure : 
 
@@ -558,11 +552,40 @@ Non Prod : 3 Days
 
 Fast snapshot restore : Enable fast snapshot restore to ensure that volumes created from snapshots created by this policy instantly deliver all of their provisioned performance.
 
-
-__________
-
+______________________________________________________________________________________
 
 
+Scenario : 10 ec2 instances.. AV, MS Office, Custom WP, CUstom OS users, Applications, IIS.. 
+
+--> Launching 10 instance : connect to 10 instance and install everything in all 10 instance.. 
+--> 1 ec2 instance : Install everything.. : Keep it as Image : --> Launch "n" number using image..
+
+Client : OS with CIS Benchmarks (Center for Internet Security) : 
+
+*** GoldenAMI = CUstomized AMI.. Won't work with keypairs.. We need to change the password.. 
+
+Ec2 instance , Perform customizations --> Create a Golden AMI --> From GAMI we can launch n num of ec2 instance.. 
+
+Similar to Snapshots..
+
+--> We can launch another instance in same region using GAMI.
+--> We can copy Region 1 GAMI to Region 2, And launch an ec2 instance in Region 2. 
+--> We can share GAMI from Acc 1 to Acc 2. 
+--> We can share GAMI to public.
+
+______________________________________
+
+Task : Launch a windows ec2 instance.. Change ADMINISTRATOR PASSWORD, Change wallpaper, Change timezone.. Install IIS, write custom data to c:/inetpub/wwwroot/,.. Create a 1gb volume and make it available at OS level as D:/ Drive.. then Stop instance and Create a GoldenAMI.
+--> Launch an ec2 instance from GAMI, get connect to it and verify all changes present or not.!!!
+
+
+Task 2 : Launch Linux ec2 instance, Make it as webserver.. Add custom webpages.. Create a 2gb volume and associate it make it perm mount.. then Create a Golden AMI and Launch instance from GAMI and test output. 
+
+Task 3 : How to setup password authentication to ec2-user user instead of keypair authentication.
+https://comtechies.com/password-authentication-aws-ec2.html
+
+
+Task 4 : https://aws.amazon.com/blogs/storage/automating-amazon-ebs-snapshot-and-ami-management-using-amazon-dlm/
 
 
 

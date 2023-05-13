@@ -730,9 +730,9 @@ ________
 
 7 : Configure Versions for Launch config. 
 
-
 ____________________________________________________________________________________________
 
+D: 13/05/2023
 
 EFS : Elastic File System : File Share : Shared Storage solution for Multiple ec2 instances. : 
 --> Network File System : NFS v4.1 : Port 2049
@@ -740,7 +740,7 @@ EFS : Elastic File System : File Share : Shared Storage solution for Multiple ec
 --> No Pre Provisioning required.
 --> Add entry in "/etc/fstab" file.  Get entry info from "/etc/mtab" file
 
-mkdir server1
+mkdir shared
 
 sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-0b7b1937bf7ebbeb6.efs.ap-south-1.amazonaws.com:/ shared
 
@@ -758,18 +758,17 @@ ________________________________________________________________________________
 Requirement : 
 2 ec2 instances.. Want to have a shared folder to maintain centralised content across the two instances.
 
-
-sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-0a8521af632bf98ae.efs.ap-south-1.amazonaws.com:/ efs
-
-sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-0a8521af632bf98ae.efs.ap-south-1.amazonaws.com:/ /var/www/html/
-
-
-fs-0a8521af632bf98ae.efs.ap-south-1.amazonaws.com:/ /var/www/html nfs4 rw,relatime,vers=4.1,rsize=1048576,wsize=1048576,namlen=255,hard,noresvport,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=172.31.39.30,local_lock=none,addr=172.31.47.141 0 0
-
-
 ==> For windows OS we can use : SMB Server message block: 
 
+___________________
 
+
+Plecement Groups : 
+--> Cluster PG
+--> partition PG
+--> Spread PG
+
+___________________
 
 
 

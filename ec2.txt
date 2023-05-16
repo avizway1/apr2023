@@ -831,6 +831,10 @@ aws s3 mb s3://yourtestbucket --profile s3full
 aws s3 mb s3://yourtestbucket --profile s3read
 
 
+aws configure --profile s3full --> configure accesskey and secretkey
+aws configure --profile s3read --> configure accesskey and secretkey
+
+
 Task 4 : create an index.html file in local laptop and Upload it to an s3 bucket.. 
 while launching the instance, make your instance as webserver then copy all the webcontent from s3 bucket to web content path (/var/www/html/). Perform using "userdata".
 
@@ -846,6 +850,8 @@ https://www.youtube.com/watch?v=sZiiB4yF0VY
 
 _____________________________________________________________________________________________________
 
+D: 16/05/2023
+
 
 Eventbridge : 
 
@@ -855,7 +861,7 @@ Eventbridge :
 
  Event Bridge : 
 
- {"version":"0","id":"eec4eda2-6639-e7b3-150d-c6461f1f0686","detail-type":"EC2 Instance State-change Notification","source":"aws.ec2","account":"501170964283","time":"2022-04-08T02:59:33Z","region":"ap-south-1","resources":["arn:aws:ec2:ap-south-1:501170964283:instance/i-00f56eba78b7b4e65"],"detail":{"instance-id":"i-00f56eba78b7b4e65","state":"stopped"}}
+{"version":"0","id":"eec4eda2-6639-e7b3-150d-c6461f1f0686","detail-type":"EC2 Instance State-change Notification","source":"aws.ec2","account":"501170964283","time":"2022-04-08T02:59:33Z","region":"ap-south-1","resources":["arn:aws:ec2:ap-south-1:501170964283:instance/i-00f56eba78b7b4e65"],"detail":{"instance-id":"i-00f56eba78b7b4e65","state":"stopped"}}
 
  Sample Event : 
 
@@ -865,7 +871,7 @@ Eventbridge :
 
  INPUT TEMPLATE: 
 
- "At <time>, Status of your EC2 instance <instance-id> in the AWS Region <region> has changed to <state>."
+ "At <time>, Status of your EC2 instance <instance-id> in the AWS Region <region> has changed to <state> in this <account>."
 
  https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html
  https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-create-rule-schedule.html#eb-cron-expressions
@@ -875,24 +881,7 @@ Task 1 : Configure Eventbridge to stop an ec2 instance at a particular time usin
 
 Task 2 : Configure to stop an ec2 instance after 5 minutes, trigger an email with custom email format.
 
-_______________________________________________________________________________________
-
-
-Platform : Windows
-Platform : Linux
-
-Naming Standards : Wi-wt-ad-p :  
-		: Li-ap2-c1-s : 
-
-s : Staging / NonProd
-u : uat 
-p : production
-
-wi : Windows
-li : Linux
-wt : app code, tw : app code
-c1/c2 : Client id 
-
+Task 3 ; create 1gb volume, take a snapshot of that 1gb volume for every 2 min. (Make sure you delete volume, snapshot and eb rule) 
 
 ____________________
 
@@ -913,6 +902,25 @@ Task : Change the timezone of an windows ec2 instance using ssm run command. (tz
 <script> tzutil /s "India Standard Time" </script>
 
 
+_______________________________________________________________________________________
+
+Platform : Windows
+Platform : Linux
+
+Naming Standards : Wi-wt-ad-p :  
+		: Li-ap2-c1-s : 
+
+s : Staging / NonProd
+u : uat 
+p : production
+
+wi : Windows
+li : Linux
+wt : app code, tw : app code
+c1/c2 : Client id 
+
+
+Instance Isolation diagram.. Try to read about it.. (shared tenancy, dedicated tenancy (host/instance))
 
 
 

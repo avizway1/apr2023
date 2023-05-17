@@ -885,7 +885,6 @@ Task 3 ; create 1gb volume, take a snapshot of that 1gb volume for every 2 min. 
 
 ____________________
 
-
 Systems Manager run command :
 --> All instance must associated with "SSM ROle". 
 --> OS level, Every instance have an SSM agent.  
@@ -921,6 +920,45 @@ c1/c2 : Client id
 
 
 Instance Isolation diagram.. Try to read about it.. (shared tenancy, dedicated tenancy (host/instance))
+
+_______________________________________________________________________________________
+
+D: 17/05/2023
+
+
+metadata : data about the data..
+
+curl http://169.254.169.254/latest/meta-data/
+
+
+AWS Hypervisor : 
+
+Earlier generation instances used ; XEN hypervisor, developed by citrix
+All current generation instances are using ; Nitro hypervisor developed by AWS
+
+
+Host Based Hypervisor : OS cannot communicate directly with underlying hardware, We'll have an additional os in bertween.. 
+bare metal hypervisor : OS can communicate with hardware directly with the help of hypervisor (ESXi/Hyper-v, Xen, Nitro)
+
+
+Status checks : We have 2 status checks in AWS.. 
+
+System Status check : Issues at underlying physical interfaces/hardware.. Perform stop and start to fix this issue.. Contact AWS..
+
+Instance status check : Issues at OS level
+--> Reboot
+--> Observe the logs of ec2 instance.
+--> Initiate the "Replace root volume" activity from most recently created snapshot.
+
+
+
+
+
+
+
+
+
+
 
 
 

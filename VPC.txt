@@ -53,7 +53,7 @@ As AWS reservs 5 IPs..
 /24 ==> 32-24=8 -> 2^8 = 256 - 5 = 251 Usable IPs
 /23 ==> 32-23=9 -> 2^9 = 512 - 5 = 507 Usable IPs
 /16 ==> 32-16=16 -> 2^16 = 65536 - 5 = 65531 Usable IPs
- 
+
 ____________
 
 In reguar networks, 2 IPs are reserved.. We cannot use these (First Ip/Network id and last ip/Broadcost ip)
@@ -84,14 +84,11 @@ Maximum : 32-16 = 16 ==> 2^16 = 65536 - 5 reserved = 65531 Usable IPs
 https://www.davidc.net/sites/default/subnets/subnets.html
 
 
-
 VPC  Part -1
 https://www.youtube.com/watch?v=CpW85hqLIRc
 
 https://www.youtube.com/watch?v=zWW27SYFx6c&t=16s
 _____________________________________________________________________________________
-
-
 
 
 VPC : Virtual Private Cloud : Region specific service.. 
@@ -106,16 +103,16 @@ Public Subnet : Internet facing subnet.. :
 Private Subnet : Non-Internet facing subnet.. : 
 
 How big VPC we required.?	300 Instance	Ans : /23 (512 = 512-5 = 507 Usable IPs) (192.168.0.0/23)
-How many subnets we required within the VPC..?		Ans : 2
-How many public SUbnets required within vpc..?		Ans : 1 (192.168.0.0/25)
-How many private SUbnets required within vpc.?		Ans : 1 (192.168.0.128/25)
+How many subnets we required within the VPC..?		Ans : 4
+How many public SUbnets required within vpc..?		Ans : 2 (192.168.0.0/26	, 192.168.0.64/26	)
+How many private SUbnets required within vpc.?		Ans : 2 (192.168.0.128/25, 192.168.1.0/25	)
 Are you going to create any subnets in future.?		Ans : Yes (Have some IPs for future use).
-													(192.168.1.0/25, 192.168.1.128/25)
+													(192.168.1.128/25)
 
-ap-south-1a : Public
-ap-south-1b : private
+ap-south-1a : Public-1 & Private-1
+ap-south-1b : Public-2 & private-2
 
-SUbnet : ap-south-1a : subnet1 & Subnet 2
+
 
 Public Subnet : Internet facing.. : ELB, Jump/ Bastian Host.. 
 Private Subnet : DBs, Application, Web servers.. 
@@ -137,7 +134,7 @@ Step 4 : Create RouteTables and Associate appropriate Subnets, add required rout
 
 --> PublicRoute : Go to SUbnet Association and choose "Public SUbnet". Navigate to Routes and add a route via IGW. 	 (0.0.0.0/0 --> IGW)
 
---> PrivateRoute : Go to SUbnet Association and choose "Private SUbnet". (DONT ADD INTERNET GATEWAY).
+--> PrivateRoute : Go to SUbnet Association and choose "Private SUbnet". (DON'T ADD INTERNET GATEWAY).
 
 Step 5 (Optional) : Navigate to Subnets, Choose "Public SUbnet", Actions, "Modify auto assign public ip settings", Enable.
 
@@ -146,14 +143,10 @@ JUMP Server / Bastian Host : Is a Dedicated EC2 instance, Runs in CustomVPC PUbl
 
 ___________
 
-Task : Create a VPC with 2 Subnets. (1 Public SUbnets and 1 Private Subnets)
-1 Public SUbnets (ap-south-1a)
-1 Private SUbnets (ap-south-1b)
-___
-
 Task : Create a VPC with 4 Subnets. (2 Public SUbnets and 2 Private Subnets)
 2 Public SUbnets (ap-south-1a, ap-south-1b)
 2 Private SUbnets (ap-south-1a, ap-south-1b)
+
 
 Task 2 : draw.io website and design this diagram.
 https://app.diagrams.net/?splash=0&libs=aws4

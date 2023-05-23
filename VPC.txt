@@ -112,8 +112,6 @@ Are you going to create any subnets in future.?		Ans : Yes (Have some IPs for fu
 ap-south-1a : Public-1 & Private-1
 ap-south-1b : Public-2 & private-2
 
-
-
 Public Subnet : Internet facing.. : ELB, Jump/ Bastian Host.. 
 Private Subnet : DBs, Application, Web servers.. 
 
@@ -122,10 +120,10 @@ Step 1 : Create a VPC.
 
 Step 2 : Create Subnets within CustomVPC. 
 
-Name : Public Subnet 1a : ap-south-1a : 192.168.0.0/23
-Name : Public Subnet 1b : ap-south-1b : 192.168.2.0/23
-Name : Private SUbnet 1a : ap-south-1a : 192.168.4.0/23
-Name : Private Subnet 1b : ap-south-1b : 192.168.6.0/23
+Name : Public Subnet 1a : ap-south-1a : 192.168.0.0/26
+Name : Public Subnet 1b : ap-south-1b : 192.168.0.64/26
+Name : Private SUbnet 1a : ap-south-1a : 192.168.0.128/25
+Name : Private Subnet 1b : ap-south-1b : 192.168.1.0/25
 
 Step 3 : Create an Internet Gateway and associate with CustomVPC.
 --> One VPC can contains one IGW.
@@ -202,6 +200,13 @@ https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html#nacl-ephe
 
 _______________________________________________________________________________________
 
+Task : Create VPC with 4 subnets. (2 public and 2 private)
+
+Launch Instances in Public and private.. and with the help of "NAT Instance" provide internet to private subnet instance.
+
+Task 2 : Launch an ec2 instance in custom vpc public subnmet and make it as webserver. 
+Apply NACL to block webpage delivery from public subnet webserver.
+_______________________________________________________________________________________
 
 Endpoints : Private Links : It provides private connectivity to the resources. If we have any requirement, s3 rwquests/dynamodb req should not flow over the internet. 
 

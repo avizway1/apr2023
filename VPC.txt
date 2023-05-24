@@ -250,3 +250,20 @@ Task ; Practice entire VPC (except NAT gateway : Use NAT Instance)
 
 
 
+https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs-cwl.html#flow-logs-iam-role
+
+
+					Requester VPC (mumbai)		Accepter VPC (singapore)
+Account Info		501170964283				501170964283
+VPC info			vpc-02c6a3ce310ccabcb		vpc-0d5ff77f3dcb273cb
+CIDR/Ip Range		192.168.0.0/23				172.31.0.0/16
+Region				Mumbai						Singapore
+
+
+
+
+
+
+
+
+

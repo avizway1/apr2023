@@ -88,19 +88,9 @@ Task 1 : Launch an Mysql RDS db instance in CUstomVPCs Private SUbnet. Launch an
 
 Task 2 : Restore the shared sample db to the rds instance. 
 
-
-
-
-
-
-
-
-
-
-
-
 _________________________________________________________________________________________
 
+D: 26/05/2023
 
 MultiAZ Deployment : Designed for Failover/FT purpose. : Creates a standby in a different Availability Zone (AZ) to provide data redundancy, eliminate I/O freezes, and minimize latency spikes during system backups.
 

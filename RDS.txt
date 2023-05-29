@@ -140,6 +140,7 @@ Task 2 : https://aws.amazon.com/getting-started/hands-on/amazon-ebs-backup-and-r
 
 ____________________________________________________________________________________
 
+D: 29/05/2023
 
 Aurora DB : No Free tier eligibility
 
@@ -183,44 +184,17 @@ Amazon DocumentDB : MongoDB compatable database.
 
 __________________
 
-Task : 
-https://aws.amazon.com/getting-started/hands-on/create-nosql-table/
 
-Developers:
+OPTIONAL TASK : Developers:
 Task 4:
 https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TicTacToe.html
 
-________________
-
-Task : launch an rds mysql db instance-1.. Now export/restore the shared db... 
-
-Launch another rds mysql db instance-2.. Migrate all the datbases and tables from Db instance-1 to db instance-2 Using DMS (Database Migration service).
-
-1. Launch a DMS cluster
-2. Create endpoints (Source and destination) and test the endpoints
-3. Create a replciation job and verify.
-
-https://www.youtube.com/watch?v=iRhJDGp-ew8
-
-_________________
-
-Task : launch an ec2 instance in mumbai region.. connect to it and make it as webserver.. 
-
-Use AWS Application Migration Service (MGN) and migrate the Mumbai region ec2 instance to "Sydney" region and verify webpage.
-
-https://www.youtube.com/watch?v=fIEwoFaXExQ
-
 __________________
 
-
-TASK 2 : https://aws.amazon.com/getting-started/hands-on/deploy-wordpress-with-amazon-rds/
-
-Task 5 : https://aws.amazon.com/getting-started/hands-on/migrate-rdsmysql-to-auroramysql/?trk=gs_card (No free tier)
-
+DMS : Database Migration Task Steps :
 
 Homegenious : mysql --> DMS --> AWS RDS Mysql
 heterogenious : IBm DB2 --> SCT (Schema Convertion tool) --> DMS --> AWS RDS Mysql/aurora
-
 
 
 Step 1 : create a DMS cluster (dms.t2.micro)
@@ -233,6 +207,7 @@ migrate existing data. one time.
 Migrate changes only. only changes migrates.
 Migrate existing and continue migration. 
 
+__________________
 
 How to connect to Redshift : 
 https://docs.aws.amazon.com/redshift/latest/mgmt/connecting-using-workbench.html
@@ -245,6 +220,32 @@ OLTP : Online Transactional process : RDS
 leader node : Designed to run query on compute nodes.
 Compute Node : it stores actual data
 
+________________
 
 Amazon Neptune : Fast, reliable graph database
 Amazon DocumentDB : MongoDB compatibility
+
+========================================================================================
+
+Task 1 : Launch PostgreSQL in RDS, install "pgadmin" in JUMp server and connect to postgre db.
+
+Task 2 : Launch amazon Limnux 2 in custome VPC public Subvnet, Use this as connection over SSL with mysql workbench and connect to private subnet hosted mysql rds cluster.
+
+https://www.youtube.com/watch?v=qulcnNu8g7o
+________________
+
+Task 3 : 
+https://aws.amazon.com/getting-started/hands-on/create-nosql-table/
+
+__________________
+
+Task 4 : launch an rds mysql db instance-1.. Now export/restore the shared db... 
+
+Launch another rds mysql db instance-2.. Migrate all the datbases and tables from Db instance-1 to db instance-2 Using DMS (Database Migration service).
+
+1. Launch a DMS cluster
+2. Create endpoints (Source and destination) and test the endpoints
+3. Create a replciation job and verify.
+
+https://www.youtube.com/watch?v=iRhJDGp-ew8
+

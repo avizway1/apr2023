@@ -145,14 +145,13 @@ git clone
 
 Task : With shared code, perform CICD deployment.
 
-GIT : 
+
+
+https://www.udemy.com/course/linuxwithavinash/?couponCode=MAY2023
+
+https://www.udemy.com/course/jenkinswithavinash/?couponCode=MAY2023
+
 https://www.youtube.com/watch?v=rtI26X6FJX0&list=PLneBjIzDLECkdgoinrTO7D519zgPEmcte
-
-Linux : 
-https://www.udemy.com/course/linuxwithavinash/?couponCode=APR2023
-
-Jenkins : 
-https://www.udemy.com/course/jenkinswithavinash/?couponCode=APR2023
 
 
 ______________________________________________________________________________________
